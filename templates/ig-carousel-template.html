@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<style>
+  :root {
+    --primary: #1a73e8;
+    --accent: #ffb703;
+    --ink: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: "PingFang TC", "Hiragino Sans GB", "Heiti TC", "Microsoft JhengHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .slide {
+    position: relative;
+    width: 1080px;
+    height: 1080px;
+    background-color: #0b1f33;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("__BG__");
+    background-size: cover;
+    background-position: center;
+  }
+  .gradient {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(100deg, rgba(4, 26, 51, 0.94) 0%, rgba(4, 26, 51, 0.7) 45%, rgba(4, 26, 51, 0.3) 100%);
+  }
+  /* ===== 封面版面 ===== */
+  .content-cover {
+    position: absolute;
+    inset: 0;
+    padding: 64px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .series-badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #101010;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 10px 26px;
+    border-radius: 44px;
+    letter-spacing: 2px;
+  }
+  .home-badge {
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.75);
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    padding: 8px 22px;
+    border-radius: 44px;
+    letter-spacing: 1px;
+  }
+  .title {
+    color: var(--ink);
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 1.3;
+    text-shadow: 0 3px 18px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+  }
+  .title .hl {
+    color: var(--accent);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.92);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
+  }
+  /* ===== 重點版面 ===== */
+  .content-pt {
+    position: absolute;
+    inset: 0;
+    padding: 72px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pt-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: #101010;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 10px 26px;
+    border-radius: 44px;
+    letter-spacing: 2px;
+  }
+  .pt-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 36px;
+  }
+  .pt-title {
+    color: var(--ink);
+    font-size: 84px;
+    font-weight: 900;
+    line-height: 1.28;
+    text-shadow: 0 3px 18px rgba(0,0,0,0.5);
+    letter-spacing: 1px;
+  }
+  .pt-title .hl { color: var(--accent); }
+  .pt-note {
+    color: rgba(255,255,255,0.85);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .pt-btm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(255,255,255,0.92);
+  }
+  .pt-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .pt-brand-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 900;
+  }
+  .pt-count {
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="bg"></div>
+    <div class="gradient"></div>
+
+    <!-- 封面版面（第 1 張） -->
+    <div class="content-cover">
+      <div class="top">
+        <span class="series-badge">__SERIES__</span>
+        <span class="home-badge">__SUBTITLE__</span>
+      </div>
+      <h1 class="title">__TITLE__</h1>
+      <div class="brand">
+        <span class="brand-logo">宅</span>
+        <span>充滿意外的宅爸人生</span>
+      </div>
+    </div>
+
+    <div style="display:none">
+      <!-- 重點版面（第 2~N 張） -->
+      <div class="content-pt">
+        <div>
+          <span class="pt-tag">__PT_TAG__</span>
+        </div>
+        <div class="pt-body">
+          <div class="pt-title">__PT_TITLE__</div>
+          <div class="pt-note">__PT_NOTE__</div>
+        </div>
+        <div class="pt-btm">
+          <div class="pt-brand">
+            <span class="pt-brand-logo">宅</span>
+            <span>充滿意外的宅爸人生</span>
+          </div>
+          <div class="pt-count">__PT_COUNT__</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
